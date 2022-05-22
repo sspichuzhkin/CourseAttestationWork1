@@ -1,1 +1,3 @@
-/CourseAttestationWork1.iml
+*.iml
+/out/
+/.idea/
