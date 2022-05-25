@@ -3,8 +3,8 @@ package pro.sky;
 public class Main {
     public static void main(String[] args) {
 
-        employeeList[0] = new Employee("fullName1", "1", 100_000);
-        employeeList[1] = new Employee("fullName2", "1", 100_000);
+        employeeList[0] = new Employee("fullName1", "1", 50_000);
+        employeeList[1] = new Employee("fullName2", "1", 150_000);
         employeeList[2] = new Employee("fullName3", "2", 100_000);
         employeeList[3] = new Employee("fullName4", "2", 100_000);
         employeeList[4] = new Employee("fullName5", "3", 100_000);
@@ -40,14 +40,14 @@ public class Main {
     }
 
     private static void countMinMonthSalary() {
-        double minMonthSalary = 250_000;
+        double minMonthSalary = Main.employeeList[0].getSalary();
         for (Employee employee : Main.employeeList) {
             double currentMonthSalary = employee.getSalary();
             if (currentMonthSalary < minMonthSalary) {
                 minMonthSalary = currentMonthSalary;
             }
         }
-        System.out.println("minMonthSalary = " + minMonthSalary);
+        System.out.println("minMonthSalary = " + String.format("%.2f", minMonthSalary));
         System.out.println();
     }
 
@@ -59,7 +59,7 @@ public class Main {
                 maxMonthSalary = currentMonthSalary;
             }
         }
-        System.out.println("maxMonthSalary = " + maxMonthSalary);
+        System.out.println("maxMonthSalary = " + String.format("%.2f", maxMonthSalary));
         System.out.println();
     }
 
