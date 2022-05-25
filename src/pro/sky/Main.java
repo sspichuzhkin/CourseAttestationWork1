@@ -20,6 +20,8 @@ public class Main {
         countMaxMonthSalary();
         countAvgMonthSalary();
         printFullName();
+        indexSalary();
+        System.out.println();
     }
 
     static Employee[] employeeList = new Employee[10];
@@ -52,7 +54,7 @@ public class Main {
     }
 
     private static void countMaxMonthSalary() {
-        double maxMonthSalary = -1;
+        double maxMonthSalary = Main.employeeList[0].getSalary();
         for (Employee employee : Main.employeeList) {
             double currentMonthSalary = employee.getSalary();
             if (currentMonthSalary > maxMonthSalary) {
@@ -81,5 +83,15 @@ public class Main {
             }
         }
         System.out.println();
+    }
+
+    private static void indexSalary() {
+        int newSalary;
+        double indexValue = 0.1;
+        for (Employee employee : employeeList) {
+            newSalary = (int) (employee.getSalary() + employee.getSalary() * indexValue);
+            employee.setSalary(newSalary);
+//checking new salary value            System.out.println("newSalary = " +  employee.getSalary());
+        }
     }
 }
